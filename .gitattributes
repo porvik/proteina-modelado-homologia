@@ -1,0 +1,21 @@
+* text=auto
+
+.gitattributes text eol=lf
+*.html text eol=lf
+*.qmd text eol=lf
+*.R text eol=lf
+*.r text eol=lf
+*.fasta text eol=lf
+*.aln text eol=lf
+*.aln-fasta text eol=lf
+*.aln-clustal_num text eol=lf
+*.cif text eol=lf
+*.bib text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.svg text eol=lf
+
+*.png binary
+*.jpg binary
+*.pdf binary
+*.docx binary

@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PRÁCTICAS DE BIOQUÍMICA EXPERIMENTAL I - BIOQUÍMICA FÍSICA Y ESTRUCTURA DE MACROMOLÉCULAS</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="Cuaderno_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Cuaderno_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Cuaderno_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Cuaderno_files/libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="Cuaderno_files/libs/quarto-html/popper.min.js"></script>
+<script src="Cuaderno_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Cuaderno_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Cuaderno_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Cuaderno_files/libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Cuaderno_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Cuaderno_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Cuaderno_files/libs/bootstrap/bootstrap-943e08653f4bd8ac7ab9292bfc489267.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Saltar al contenido principal</a>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#introducción-y-objetivos" id="toc-introducción-y-objetivos" class="nav-link active" data-scroll-target="#introducción-y-objetivos">1. Introducción y objetivos</a></li>
+  <li><a href="#metodología-y-resultados" id="toc-metodología-y-resultados" class="nav-link" data-scroll-target="#metodología-y-resultados">2. Metodología y resultados</a>
+  <ul class="collapse">
+  <li><a href="#identificación-y-caracterización-de-la-proteína-problema" id="toc-identificación-y-caracterización-de-la-proteína-problema" class="nav-link" data-scroll-target="#identificación-y-caracterización-de-la-proteína-problema">2.1. Identificación y caracterización de la proteína problema</a>
+  <ul class="collapse">
+  <li><a href="#identificación-de-la-proteína-mediante-uniprot" id="toc-identificación-de-la-proteína-mediante-uniprot" class="nav-link" data-scroll-target="#identificación-de-la-proteína-mediante-uniprot">2.1.1. Identificación de la proteína mediante UniProt</a></li>
+  <li><a href="#función-biológica" id="toc-función-biológica" class="nav-link" data-scroll-target="#función-biológica">2.1.2. Función biológica</a></li>
+  <li><a href="#caracterización-fisicoquímica" id="toc-caracterización-fisicoquímica" class="nav-link" data-scroll-target="#caracterización-fisicoquímica">2.1.3. Caracterización fisicoquímica</a></li>
+  </ul></li>
+  <li><a href="#identificación-de-proteínas-homólogas" id="toc-identificación-de-proteínas-homólogas" class="nav-link" data-scroll-target="#identificación-de-proteínas-homólogas">2.2. Identificación de proteínas homólogas</a>
+  <ul class="collapse">
+  <li><a href="#búsqueda-de-proteínas-homólogas-mediante-blastp" id="toc-búsqueda-de-proteínas-homólogas-mediante-blastp" class="nav-link" data-scroll-target="#búsqueda-de-proteínas-homólogas-mediante-blastp">2.2.1. Búsqueda de proteínas homólogas mediante BLASTp</a></li>
+  <li><a href="#selección-de-secuencias-y-diversidad-taxonómica" id="toc-selección-de-secuencias-y-diversidad-taxonómica" class="nav-link" data-scroll-target="#selección-de-secuencias-y-diversidad-taxonómica">2.2.2. Selección de secuencias y diversidad taxonómica</a></li>
+  </ul></li>
+  <li><a href="#alineamiento-múltiple-y-análisis-evolutivo" id="toc-alineamiento-múltiple-y-análisis-evolutivo" class="nav-link" data-scroll-target="#alineamiento-múltiple-y-análisis-evolutivo">2.3. Alineamiento múltiple y análisis evolutivo</a>
+  <ul class="collapse">
+  <li><a href="#alineamiento-múltiple-mediante-clustal-omega" id="toc-alineamiento-múltiple-mediante-clustal-omega" class="nav-link" data-scroll-target="#alineamiento-múltiple-mediante-clustal-omega">2.3.1. Alineamiento múltiple mediante Clustal Omega</a></li>
+  <li><a href="#análisis-de-conservación-de-secuencia" id="toc-análisis-de-conservación-de-secuencia" class="nav-link" data-scroll-target="#análisis-de-conservación-de-secuencia">2.3.2. Análisis de conservación de secuencia</a></li>
+  <li><a href="#análisis-filogenético-mediante-máxima-verosimilitud" id="toc-análisis-filogenético-mediante-máxima-verosimilitud" class="nav-link" data-scroll-target="#análisis-filogenético-mediante-máxima-verosimilitud">2.3.3. Análisis filogenético mediante máxima verosimilitud</a></li>
+  </ul></li>
+  <li><a href="#predicción-de-características-estructurales" id="toc-predicción-de-características-estructurales" class="nav-link" data-scroll-target="#predicción-de-características-estructurales">2.4. Predicción de características estructurales</a>
+  <ul class="collapse">
+  <li><a href="#predicción-de-estructura-secundaria" id="toc-predicción-de-estructura-secundaria" class="nav-link" data-scroll-target="#predicción-de-estructura-secundaria">2.4.1. Predicción de estructura secundaria</a></li>
+  <li><a href="#identificación-de-dominios-estructurales-y-motivos-funcionales-mediante-interpro-y-prosite" id="toc-identificación-de-dominios-estructurales-y-motivos-funcionales-mediante-interpro-y-prosite" class="nav-link" data-scroll-target="#identificación-de-dominios-estructurales-y-motivos-funcionales-mediante-interpro-y-prosite">2.4.2. Identificación de dominios estructurales y motivos funcionales mediante InterPro y PROSITE</a></li>
+  <li><a href="#predicción-de-topología-transmembrana" id="toc-predicción-de-topología-transmembrana" class="nav-link" data-scroll-target="#predicción-de-topología-transmembrana">2.4.3. Predicción de topología transmembrana</a></li>
+  <li><a href="#análisis-de-conservación-de-las-regiones-solcar" id="toc-análisis-de-conservación-de-las-regiones-solcar" class="nav-link" data-scroll-target="#análisis-de-conservación-de-las-regiones-solcar">2.4.4. Análisis de conservación de las regiones SOLCAR</a></li>
+  </ul></li>
+  <li><a href="#identificación-y-selección-de-moldes-experimentales" id="toc-identificación-y-selección-de-moldes-experimentales" class="nav-link" data-scroll-target="#identificación-y-selección-de-moldes-experimentales">2.5. Identificación y selección de moldes experimentales</a>
+  <ul class="collapse">
+  <li><a href="#búsqueda-de-estructuras-homólogas-mediante-blastp-contra-pdb" id="toc-búsqueda-de-estructuras-homólogas-mediante-blastp-contra-pdb" class="nav-link" data-scroll-target="#búsqueda-de-estructuras-homólogas-mediante-blastp-contra-pdb">2.5.1. Búsqueda de estructuras homólogas mediante BLASTp contra PDB</a></li>
+  <li><a href="#búsqueda-de-moldes-mediante-swiss-model" id="toc-búsqueda-de-moldes-mediante-swiss-model" class="nav-link" data-scroll-target="#búsqueda-de-moldes-mediante-swiss-model">2.5.2. Búsqueda de moldes mediante SWISS-MODEL</a></li>
+  <li><a href="#comparación-estructural-de-los-moldes-con-alphafold" id="toc-comparación-estructural-de-los-moldes-con-alphafold" class="nav-link" data-scroll-target="#comparación-estructural-de-los-moldes-con-alphafold">2.5.3. Comparación estructural de los moldes con AlphaFold</a></li>
+  </ul></li>
+  <li><a href="#modelado-de-la-estructura-tridimensional" id="toc-modelado-de-la-estructura-tridimensional" class="nav-link" data-scroll-target="#modelado-de-la-estructura-tridimensional">2.6. Modelado de la estructura tridimensional</a>
+  <ul class="collapse">
+  <li><a href="#predicción-estructural-mediante-alphafold" id="toc-predicción-estructural-mediante-alphafold" class="nav-link" data-scroll-target="#predicción-estructural-mediante-alphafold">2.6.1. Predicción estructural mediante AlphaFold</a></li>
+  <li><a href="#modelado-por-homología-mediante-swiss-model" id="toc-modelado-por-homología-mediante-swiss-model" class="nav-link" data-scroll-target="#modelado-por-homología-mediante-swiss-model">2.6.2. Modelado por homología mediante SWISS-MODEL</a></li>
+  <li><a href="#modelado-por-homología-mediante-phyre2" id="toc-modelado-por-homología-mediante-phyre2" class="nav-link" data-scroll-target="#modelado-por-homología-mediante-phyre2">2.6.3. Modelado por homología mediante Phyre2</a></li>
+  </ul></li>
+  <li><a href="#evaluación-y-comparación-de-los-modelos-tridimensionales" id="toc-evaluación-y-comparación-de-los-modelos-tridimensionales" class="nav-link" data-scroll-target="#evaluación-y-comparación-de-los-modelos-tridimensionales">2.7. Evaluación y comparación de los modelos tridimensionales</a>
+  <ul class="collapse">
+  <li><a href="#evaluación-de-calidad-mediante-gmqe-y-qmeandisco" id="toc-evaluación-de-calidad-mediante-gmqe-y-qmeandisco" class="nav-link" data-scroll-target="#evaluación-de-calidad-mediante-gmqe-y-qmeandisco">2.7.1. Evaluación de calidad mediante GMQE y QMEANDisCo</a></li>
+  <li><a href="#comparación-estructural-mediante-chimerax-y-rmsd" id="toc-comparación-estructural-mediante-chimerax-y-rmsd" class="nav-link" data-scroll-target="#comparación-estructural-mediante-chimerax-y-rmsd">2.7.2. Comparación estructural mediante ChimeraX y RMSD</a></li>
+  <li><a href="#selección-del-modelo-por-homología" id="toc-selección-del-modelo-por-homología" class="nav-link" data-scroll-target="#selección-del-modelo-por-homología">2.7.3. Selección del modelo por homología</a></li>
+  </ul></li>
+  <li><a href="#relación-entre-secuencia-estructura-y-función" id="toc-relación-entre-secuencia-estructura-y-función" class="nav-link" data-scroll-target="#relación-entre-secuencia-estructura-y-función">2.8. Relación entre secuencia, estructura y función</a>
+  <ul class="collapse">
+  <li><a href="#organización-tridimensional-de-las-regiones-solcar" id="toc-organización-tridimensional-de-las-regiones-solcar" class="nav-link" data-scroll-target="#organización-tridimensional-de-las-regiones-solcar">2.8.1. Organización tridimensional de las regiones SOLCAR</a></li>
+  <li><a href="#distribución-estructural-de-los-aminoácidos-invariantes" id="toc-distribución-estructural-de-los-aminoácidos-invariantes" class="nav-link" data-scroll-target="#distribución-estructural-de-los-aminoácidos-invariantes">2.8.2. Distribución estructural de los aminoácidos invariantes</a></li>
+  <li><a href="#análisis-de-la-hidrofobicidad-de-la-superficie-molecular" id="toc-análisis-de-la-hidrofobicidad-de-la-superficie-molecular" class="nav-link" data-scroll-target="#análisis-de-la-hidrofobicidad-de-la-superficie-molecular">2.8.3. Análisis de la hidrofobicidad de la superficie molecular</a></li>
+  <li><a href="#características-estructurales-relacionadas-con-el-transporte-de-nad" id="toc-características-estructurales-relacionadas-con-el-transporte-de-nad" class="nav-link" data-scroll-target="#características-estructurales-relacionadas-con-el-transporte-de-nad">2.8.4. Características estructurales relacionadas con el transporte de NAD⁺</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#discusión" id="toc-discusión" class="nav-link" data-scroll-target="#discusión">3. Discusión</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">4. Conclusiones</a></li>
+  <li><a href="#bibliografía" id="toc-bibliografía" class="nav-link" data-scroll-target="#bibliografía">5. Bibliografía</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="Cuaderno.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PRÁCTICAS DE BIOQUÍMICA EXPERIMENTAL I - BIOQUÍMICA FÍSICA Y ESTRUCTURA DE MACROMOLÉCULAS</h1>
+<p class="subtitle lead">Práctica 6 - MODELADO POR HOMOLOGÍA DE LA ESTRUCTURA TRIDIMENSIONAL DE UNA PROTEÍNA</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introducción-y-objetivos" class="level1">
+<h1>1. Introducción y objetivos</h1>
+<p>La estructura tridimensional de una proteína está relacionada con su secuencia de aminoácidos y su función biológica. Existen diferentes herramientas bioinformáticas que permiten predecir las características estructurales de una proteína sin necesidad de determinar su estructura experimentalmente. El modelado por homología se basa en que proteínas evolutivamente relacionadas presentan una estructura tridimensional similar, incluso cuando existen diferencias importantes en su secuencia primaria <span class="citation" data-cites="swiss2018">(<a href="#ref-swiss2018" role="doc-biblioref">1</a>)</span>.</p>
+<p>El objetivo de esta práctica es identificar la proteína problema a partir de su secuencia de aminoácidos, analizar su conservación evolutiva, identificar sus características estructurales y generar modelos tridimensionales utilizando diferentes herramientas de modelado por homología.</p>
+</section>
+<section id="metodología-y-resultados" class="level1">
+<h1>2. Metodología y resultados</h1>
+<section id="identificación-y-caracterización-de-la-proteína-problema" class="level2">
+<h2 class="anchored" data-anchor-id="identificación-y-caracterización-de-la-proteína-problema">2.1. Identificación y caracterización de la proteína problema</h2>
+<section id="identificación-de-la-proteína-mediante-uniprot" class="level3">
+<h3 class="anchored" data-anchor-id="identificación-de-la-proteína-mediante-uniprot">2.1.1. Identificación de la proteína mediante UniProt</h3>
+<p>A partir de la secuencia de aminoácidos proporcionada se identificó mediante UniProt la proteína SLC25A51 de <em>Homo sapiens</em>. Se trata de un transportador mitocondrial de NAD⁺ constituido por 297 aminoácidos, perteneciente a la familia de transportadores de solutos SLC25 <span class="citation" data-cites="uniprot luongo2020">(<a href="#ref-uniprot" role="doc-biblioref">2</a>,<a href="#ref-luongo2020" role="doc-biblioref">3</a>)</span>.</p>
+<div id="tbl-identificacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-identificacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1: Identificación de la proteína problema.
+</figcaption>
+<div aria-describedby="tbl-identificacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UniProt</td>
+<td><a href="https://www.uniprot.org/uniprotkb/Q9H1U9/entry">Q9H1U9</a></td>
+</tr>
+<tr class="even">
+<td>RefSeq</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/NP_219480.1">NP_219480.1</a></td>
+</tr>
+<tr class="odd">
+<td>Gen</td>
+<td>SLC25A51</td>
+</tr>
+<tr class="even">
+<td>Nombre alternativo</td>
+<td>MCART1</td>
+</tr>
+<tr class="odd">
+<td>Organismo</td>
+<td><em>Homo sapiens</em></td>
+</tr>
+<tr class="even">
+<td>Longitud</td>
+<td>297 aa</td>
+</tr>
+<tr class="odd">
+<td>Familia</td>
+<td>SLC25</td>
+</tr>
+<tr class="even">
+<td>Localización</td>
+<td>Membrana mitocondrial interna</td>
+</tr>
+<tr class="odd">
+<td>Sustrato</td>
+<td>NAD⁺</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="función-biológica" class="level3">
+<h3 class="anchored" data-anchor-id="función-biológica">2.1.2. Función biológica</h3>
+<p>La proteína SLC25A51 permite el transporte de NAD⁺ a través de la membrana mitocondrial interna hacia la matriz mitocondrial. El NAD⁺ participa como coenzima en diferentes reacciones de oxidación-reducción, entre ellas las reacciones del ciclo de Krebs. El NADH generado durante estas reacciones permite posteriormente la transferencia de electrones al complejo I de la cadena respiratoria. Por lo tanto, la proteína participa indirectamente en el metabolismo energético y en la producción de ATP <span class="citation" data-cites="luongo2020">(<a href="#ref-luongo2020" role="doc-biblioref">3</a>)</span>.</p>
+</section>
+<section id="caracterización-fisicoquímica" class="level3">
+<h3 class="anchored" data-anchor-id="caracterización-fisicoquímica">2.1.3. Caracterización fisicoquímica</h3>
+<p>Mediante ProtParam se determinaron diferentes características fisicoquímicas de la proteína problema a partir de su secuencia de aminoácidos <span class="citation" data-cites="protparam">(<a href="#ref-protparam" role="doc-biblioref">4</a>)</span>, recogidas en <a href="#tbl-protparam" class="quarto-xref">Tabla&nbsp;2</a>.</p>
+<div id="tbl-protparam" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-protparam-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;2: Características fisicoquímicas calculadas mediante ProtParam.
+</figcaption>
+<div aria-describedby="tbl-protparam-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 84%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parámetro</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Número de aminoácidos</td>
+<td>297</td>
+</tr>
+<tr class="even">
+<td>Masa molecular (Da)</td>
+<td>33.672,38</td>
+</tr>
+<tr class="odd">
+<td>Punto isoeléctrico teórico (pI)</td>
+<td>9,51</td>
+</tr>
+<tr class="even">
+<td>Residuos con carga negativa (Asp + Glu)</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>Residuos con carga positiva (Arg + Lys)</td>
+<td>33</td>
+</tr>
+<tr class="even">
+<td>Coeficiente de extinción a 280 nm (M-1.cm-1), Cys oxidadas</td>
+<td>24.785</td>
+</tr>
+<tr class="odd">
+<td>Coeficiente de extinción a 280 nm (M-1.cm-1), Cys reducidas</td>
+<td>24.410</td>
+</tr>
+<tr class="even">
+<td>Índice de inestabilidad</td>
+<td>36,01</td>
+</tr>
+<tr class="odd">
+<td>Índice alifático</td>
+<td>98,86</td>
+</tr>
+<tr class="even">
+<td>GRAVY</td>
+<td>0,036</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>La proteína presenta una masa molecular de aproximadamente 33,67 kDa y un punto isoeléctrico de 9,51. Se trata de una proteína de carácter básico, con un mayor número de aminoácidos con carga positiva que negativa. Los aminoácidos más abundantes son leucina (12,8 %), isoleucina (7,4 %), glicina (7,4 %) y fenilalanina (7,1 %).</p>
+<p>El elevado índice alifático indica una elevada presencia de aminoácidos con cadenas laterales alifáticas. El valor de GRAVY próximo a cero indica una hidropatía media próxima a cero, sin excluir la presencia de regiones muy hidrófobas. Sin embargo, este parámetro no permite determinar la distribución de las regiones hidrófobas a lo largo de la proteína.</p>
+<p>Según el índice de inestabilidad, inferior a 40, la proteína se clasifica como estable mediante ProtParam, aunque se trata solamente de una estimación teórica.</p>
+</section>
+</section>
+<section id="identificación-de-proteínas-homólogas" class="level2">
+<h2 class="anchored" data-anchor-id="identificación-de-proteínas-homólogas">2.2. Identificación de proteínas homólogas</h2>
+<section id="búsqueda-de-proteínas-homólogas-mediante-blastp" class="level3">
+<h3 class="anchored" data-anchor-id="búsqueda-de-proteínas-homólogas-mediante-blastp">2.2.1. Búsqueda de proteínas homólogas mediante BLASTp</h3>
+<p>Utilizando la secuencia de aminoácidos de la proteína problema (NP_219480.1) se realizó una búsqueda de proteínas homólogas mediante BLASTp contra la base de datos ClusteredNR (clustered non-redundant protein sequences) de NCBI <span class="citation" data-cites="altschul1990">(<a href="#ref-altschul1990" role="doc-biblioref">5</a>)</span>.</p>
+<p>A partir de los resultados obtenidos se seleccionaron 13 proteínas homólogas de diferentes organismos, teniendo en cuenta la similitud de secuencia y la diversidad taxonómica, para realizar posteriormente un análisis de conservación de secuencia y de las relaciones evolutivas.</p>
+</section>
+<section id="selección-de-secuencias-y-diversidad-taxonómica" class="level3">
+<h3 class="anchored" data-anchor-id="selección-de-secuencias-y-diversidad-taxonómica">2.2.2. Selección de secuencias y diversidad taxonómica</h3>
+<p>Se seleccionaron un total de 14 secuencias de aminoácidos, incluyendo la proteína problema como referencia. Todos los organismos seleccionados pertenecen a la clase Mammalia y a ocho órdenes taxonómicos diferentes (<a href="#tbl-ordenes" class="quarto-xref">Tabla&nbsp;3</a> y <a href="#tbl-homologos" class="quarto-xref">Tabla&nbsp;4</a>).</p>
+<div id="tbl-ordenes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ordenes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;3: Distribución taxonómica de las especies seleccionadas.
+</figcaption>
+<div aria-describedby="tbl-ordenes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Orden</th>
+<th>Número de especies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Artiodactyla</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Primates</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Chiroptera</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Rodentia</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Carnivora</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Sirenia</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Hyracoidea</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Afrosoricida</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="tbl-homologos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-homologos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;4: Secuencias seleccionadas para el análisis evolutivo.
+</figcaption>
+<div aria-describedby="tbl-homologos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Especie</th>
+<th>Nombre común (orden)</th>
+<th>Accession number</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Homo sapiens</em></td>
+<td>Humano (Primates)</td>
+<td>NP_219480.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/NP_219480.1">NCBI</a></td>
+</tr>
+<tr class="even">
+<td><em>Eptesicus fuscus</em></td>
+<td>Murciélago moreno grande (Chiroptera)</td>
+<td>XP_008141381.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/XP_008141381.1">NCBI</a></td>
+</tr>
+<tr class="odd">
+<td><em>Mesoplodon bidens</em></td>
+<td>Zifio de Sowerby (Artiodactyla)</td>
+<td>XP_081094542.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/XP_081094542.1">NCBI</a></td>
+</tr>
+<tr class="even">
+<td><em>Lipotes vexillifer</em></td>
+<td>Delfín del río Yangtsé (Artiodactyla)</td>
+<td>XP_007456089.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/XP_007456089.1">NCBI</a></td>
+</tr>
+<tr class="odd">
+<td><em>Tursiops truncatus</em></td>
+<td>Delfín mular (Artiodactyla)</td>
+<td>XP_019804504.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/XP_019804504.1">NCBI</a></td>
+</tr>
+<tr class="even">
+<td><em>Acomys russatus</em></td>
+<td>Ratón espinoso dorado (Rodentia)</td>
+<td>XP_051013571.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/XP_051013571.1">NCBI</a></td>
+</tr>
+<tr class="odd">
+<td><em>Canis lupus familiaris</em></td>
+<td>Perro doméstico (Carnivora)</td>
+<td>XP_005626896.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/XP_005626896.1">NCBI</a></td>
+</tr>
+<tr class="even">
+<td><em>Macaca mulatta</em></td>
+<td>Macaco rhesus (Primates)</td>
+<td>NP_001181571.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/NP_001181571.1">NCBI</a></td>
+</tr>
+<tr class="odd">
+<td><em>Pan troglodytes</em></td>
+<td>Chimpancé común (Primates)</td>
+<td>XP_016788979.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/XP_016788979.1">NCBI</a></td>
+</tr>
+<tr class="even">
+<td><em>Bos taurus</em></td>
+<td>Ganado bovino (Artiodactyla)</td>
+<td>NP_001092864.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/NP_001092864.1">NCBI</a></td>
+</tr>
+<tr class="odd">
+<td><em>Corynorhinus townsendii</em></td>
+<td>Murciélago orejudo de Townsend (Chiroptera)</td>
+<td>KAN6891997.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/KAN6891997.1">NCBI</a></td>
+</tr>
+<tr class="even">
+<td><em>Trichechus manatus latirostris</em></td>
+<td>Manatí de Florida (Sirenia)</td>
+<td>XP_004372302.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/XP_004372302.1">NCBI</a></td>
+</tr>
+<tr class="odd">
+<td><em>Heterohyrax brucei</em></td>
+<td>Damán de Bruce (Hyracoidea)</td>
+<td>KAN7260495.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/KAN7260495.1">NCBI</a></td>
+</tr>
+<tr class="even">
+<td><em>Tenrec ecaudatus</em></td>
+<td>Tenrec común (Afrosoricida)</td>
+<td>XP_075416299.1</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/protein/XP_075416299.1">NCBI</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+<section id="alineamiento-múltiple-y-análisis-evolutivo" class="level2">
+<h2 class="anchored" data-anchor-id="alineamiento-múltiple-y-análisis-evolutivo">2.3. Alineamiento múltiple y análisis evolutivo</h2>
+<section id="alineamiento-múltiple-mediante-clustal-omega" class="level3">
+<h3 class="anchored" data-anchor-id="alineamiento-múltiple-mediante-clustal-omega">2.3.1. Alineamiento múltiple mediante Clustal Omega</h3>
+<p>Las secuencias de aminoácidos seleccionadas se descargaron en formato FASTA. Se modificaron los identificadores de las secuencias para utilizar los nombres de los organismos y facilitar así la interpretación de los resultados. Mediante Clustal Omega se realizó un alineamiento múltiple de las 14 secuencias, obteniendo un alineamiento de 359 posiciones <span class="citation" data-cites="sievers2011">(<a href="#ref-sievers2011" role="doc-biblioref">6</a>)</span>.</p>
+<p>En el alineamiento (<a href="#fig-alineamiento" class="quarto-xref">Figura&nbsp;1</a>) se observa una elevada conservación de secuencia entre las proteínas analizadas. Algunas proteínas presentan una extensión en el extremo N-terminal respecto a la proteína problema.</p>
+<div id="fig-alineamiento" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-alineamiento-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/msa.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alineamiento-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Alineamiento múltiple de las 14 secuencias de aminoácidos mediante Clustal Omega
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="análisis-de-conservación-de-secuencia" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-de-conservación-de-secuencia">2.3.2. Análisis de conservación de secuencia</h3>
+<p>Mediante R se analizó la conservación de cada posición de aminoácidos respecto a la secuencia de la proteína humana. Para cada posición se calculó el porcentaje de secuencias que presentan el mismo aminoácido, considerando los gaps como diferencias.</p>
+<div id="tbl-conservacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;5: Resumen del análisis de conservación.
+</figcaption>
+<div aria-describedby="tbl-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parámetro</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Número de secuencias</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td>Longitud del alineamiento</td>
+<td>359</td>
+</tr>
+<tr class="odd">
+<td>Longitud de la proteína problema</td>
+<td>297</td>
+</tr>
+<tr class="even">
+<td>Conservación media (%)</td>
+<td>91,05</td>
+</tr>
+<tr class="odd">
+<td>Mediana (%)</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>Desviación estándar</td>
+<td>20,06</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Las posiciones de aminoácidos se clasificaron según su grado de conservación (<a href="#fig-distribucion" class="quarto-xref">Figura&nbsp;2</a>).</p>
+<div id="fig-distribucion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-distribucion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/conservacion_procentajes.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distribucion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Distribución de las posiciones de aminoácidos según su grado de conservación
+</figcaption>
+</figure>
+</div>
+<p>Las proteínas analizadas presentan una conservación media del 91,05 %. De los 297 aminoácidos de la proteína problema, 204 son invariantes y el 84,85 % de las posiciones presentan una conservación igual o superior al 80 %. Esta elevada conservación podría estar relacionada con la importancia de determinados aminoácidos para mantener la estructura y función de la proteína.</p>
+<div id="fig-conservacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/conservacion.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Conservación de secuencia por posición de aminoácidos respecto a SLC25A51 de <em>Homo sapiens</em>
+</figcaption>
+</figure>
+</div>
+<div id="fig-alineamiento-conservacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-alineamiento-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/conservacion_seq.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alineamiento-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Representación del alineamiento múltiple y conservación de secuencia
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="análisis-filogenético-mediante-máxima-verosimilitud" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-filogenético-mediante-máxima-verosimilitud">2.3.3. Análisis filogenético mediante máxima verosimilitud</h3>
+<p>A partir del alineamiento múltiple se generó un árbol filogenético mediante el método de máxima verosimilitud utilizando R. Mediante el criterio BIC se seleccionó el modelo evolutivo JTT+G(4), con cuatro categorías de tasas de sustitución y un parámetro de forma de 0,474, lo que indica una elevada variabilidad de las tasas de sustitución entre las posiciones de aminoácidos <span class="citation" data-cites="phangorn2011 jtt1992">(<a href="#ref-phangorn2011" role="doc-biblioref">7</a>,<a href="#ref-jtt1992" role="doc-biblioref">8</a>)</span>.</p>
+<p>Para evaluar el soporte de las agrupaciones se realizaron 1000 réplicas de bootstrap, obteniendo valores entre el 34,2 % y el 100 %. Por lo tanto, algunas agrupaciones presentan un mayor soporte que otras. En el árbol filogenético se observa una agrupación de las proteínas que coincide parcialmente con la clasificación taxonómica de los organismos, especialmente en el caso de los primates, cetáceos y murciélagos. Las proteínas de <em>Acomys russatus</em> y <em>Eptesicus fuscus</em> presentan ramas terminales más largas, lo que indica una mayor divergencia de secuencia.</p>
+<p>El árbol obtenido (<a href="#fig-filogenia" class="quarto-xref">Figura&nbsp;5</a>) se exportó en formato Newick y se visualizó mediante iTOL <span class="citation" data-cites="itol">(<a href="#ref-itol" role="doc-biblioref">9</a>)</span>.</p>
+<div id="fig-filogenia" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-filogenia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/arbol_filogenetico_bootstrap.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-filogenia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Árbol filogenético obtenido mediante máxima verosimilitud utilizando el modelo evolutivo JTT+G(4)
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="predicción-de-características-estructurales" class="level2">
+<h2 class="anchored" data-anchor-id="predicción-de-características-estructurales">2.4. Predicción de características estructurales</h2>
+<section id="predicción-de-estructura-secundaria" class="level3">
+<h3 class="anchored" data-anchor-id="predicción-de-estructura-secundaria">2.4.1. Predicción de estructura secundaria</h3>
+<p>Mediante JPred se realizó una predicción de la estructura secundaria a partir de la secuencia de aminoácidos de la proteína problema <span class="citation" data-cites="jpred2015">(<a href="#ref-jpred2015" role="doc-biblioref">10</a>)</span>. En los resultados obtenidos (<a href="#fig-jpred" class="quarto-xref">Figura&nbsp;6</a>) se observa un predominio de hélices α de diferente longitud distribuidas a lo largo de la secuencia. También se observan regiones sin estructura secundaria definida, principalmente en el extremo N-terminal. Los resultados son coherentes con la estructura característica de los transportadores mitocondriales de la familia SLC25.</p>
+<div id="fig-jpred" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-jpred-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/phred_seq.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jpred-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Predicción de la estructura secundaria de SLC25A51 mediante JPred
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="identificación-de-dominios-estructurales-y-motivos-funcionales-mediante-interpro-y-prosite" class="level3">
+<h3 class="anchored" data-anchor-id="identificación-de-dominios-estructurales-y-motivos-funcionales-mediante-interpro-y-prosite">2.4.2. Identificación de dominios estructurales y motivos funcionales mediante InterPro y PROSITE</h3>
+<p>Mediante InterPro se identificó que la proteína problema pertenece a la familia de transportadores mitocondriales de NAD⁺ <span class="citation" data-cites="interpro">(<a href="#ref-interpro" role="doc-biblioref">11</a>)</span>.</p>
+<div id="tbl-interpro" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-interpro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;6: Perfiles de secuencia identificados mediante InterPro.
+</figcaption>
+<div aria-describedby="tbl-interpro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Base de datos</th>
+<th>Perfil identificado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PANTHER</td>
+<td>Mito_NAD+_Carrier</td>
+</tr>
+<tr class="even">
+<td>PROSITE</td>
+<td>SOLCAR</td>
+</tr>
+<tr class="odd">
+<td>Pfam</td>
+<td>Mito_carr</td>
+</tr>
+<tr class="even">
+<td>CATH-Gene3D</td>
+<td>MCP_dom_sf</td>
+</tr>
+<tr class="odd">
+<td>SUPERFAMILY</td>
+<td>Mitochondrial carrier</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="fig-interpro" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-interpro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/solcar_interpro.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-interpro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Identificación de familias, dominios y características estructurales mediante InterPro
+</figcaption>
+</figure>
+</div>
+<p>Se identificaron tres regiones repetitivas mediante los perfiles SOLCAR y Mito_carr. Ambos perfiles identifican prácticamente las mismas regiones de la proteína, utilizando diferentes métodos de predicción.</p>
+<p>Mediante ScanProsite (<a href="#fig-scanprosite" class="quarto-xref">Figura&nbsp;8</a>) se determinaron las posiciones de las tres regiones SOLCAR correspondientes al perfil PS50920 <span class="citation" data-cites="prosite2006 ps50920">(<a href="#ref-prosite2006" role="doc-biblioref">12</a>,<a href="#ref-ps50920" role="doc-biblioref">13</a>)</span>.</p>
+<div id="tbl-solcar" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-solcar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;7: Posiciones de las regiones SOLCAR identificadas mediante ScanProsite.
+</figcaption>
+<div aria-describedby="tbl-solcar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Región</th>
+<th>Inicio</th>
+<th>Fin</th>
+<th>Longitud (aa)</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SOLCAR 1</td>
+<td>28</td>
+<td>108</td>
+<td>81</td>
+<td>13,674</td>
+</tr>
+<tr class="even">
+<td>SOLCAR 2</td>
+<td>116</td>
+<td>200</td>
+<td>85</td>
+<td>15,863</td>
+</tr>
+<tr class="odd">
+<td>SOLCAR 3</td>
+<td>213</td>
+<td>296</td>
+<td>84</td>
+<td>10,349</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Las tres regiones presentan una longitud similar y representan el 84,18 % de la secuencia de aminoácidos. Cada región SOLCAR está constituida típicamente por dos hélices α transmembrana y una hélice α más corta. Las tres regiones forman conjuntamente el dominio estructural del transportador mitocondrial. También se identificó una región con características de desorden intrínseco en el extremo N-terminal.</p>
+<div id="fig-scanprosite" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scanprosite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/solcar_prosite.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scanprosite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8: Identificación de las tres regiones SOLCAR mediante ScanProsite
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="predicción-de-topología-transmembrana" class="level3">
+<h3 class="anchored" data-anchor-id="predicción-de-topología-transmembrana">2.4.3. Predicción de topología transmembrana</h3>
+<p>Para identificar las regiones transmembrana de la proteína problema se utilizaron Phobius, DeepTMHMM y Phyre2 <span class="citation" data-cites="phobius2004 deeptmhmm phyre2015">(<a href="#ref-phobius2004" role="doc-biblioref">14</a>–<a href="#ref-phyre2015" role="doc-biblioref">16</a>)</span>.</p>
+<p>Mediante DeepTMHMM se clasificó la proteína como una proteína transmembrana de tipo α-helicoidal. Sin embargo, se identificaron solamente tres segmentos transmembrana, mientras que mediante Phobius se identificó solamente uno.</p>
+<p>Mediante Phyre2 (<a href="#fig-phyre-topologia" class="quarto-xref">Figura&nbsp;10</a>) se identificaron seis segmentos transmembrana correspondientes a las posiciones 34–60, 78–101, 123–145, 170–193, 216–237 y 267–290.</p>
+<p>Comparando estos resultados con las regiones SOLCAR identificadas anteriormente mediante ScanProsite se observa que cada región contiene dos hélices α transmembrana, lo que coincide con la organización estructural característica de los transportadores mitocondriales de la familia SLC25.</p>
+<p>Por lo tanto, la predicción obtenida mediante Phyre2 es la más coherente con los resultados obtenidos mediante InterPro, PROSITE y AlphaFold. Las diferencias entre las predicciones muestran las limitaciones de los diferentes métodos utilizados y la importancia de utilizar varias herramientas para caracterizar la estructura de una proteína.</p>
+<div id="fig-deeptmhmm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-deeptmhmm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/deeptmhmm.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-deeptmhmm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;9: Predicción de topología transmembrana y probabilidades posteriores mediante DeepTMHMM
+</figcaption>
+</figure>
+</div>
+<div id="fig-phyre-topologia" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-phyre-topologia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/phyre2_transmembrana.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-phyre-topologia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10: Predicción de las seis hélices α transmembrana mediante Phyre2
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="análisis-de-conservación-de-las-regiones-solcar" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-de-conservación-de-las-regiones-solcar">2.4.4. Análisis de conservación de las regiones SOLCAR</h3>
+<p>A partir de los resultados obtenidos mediante ScanProsite se seleccionaron las posiciones de aminoácidos correspondientes a las tres regiones SOLCAR para analizar su grado de conservación de manera independiente.</p>
+<div id="fig-solcar-conservacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-solcar-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/solcar_conservacion.png" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-solcar-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;11: Distribución de la conservación de secuencia de las regiones SOLCAR y del resto de la proteína
+</figcaption>
+</figure>
+</div>
+<div id="tbl-solcar-conservacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-solcar-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;8: Conservación de las regiones SOLCAR y del resto de la proteína.
+</figcaption>
+<div aria-describedby="tbl-solcar-conservacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Región</th>
+<th style="text-align: right;">Longitud (aa)</th>
+<th style="text-align: right;">Media (%)</th>
+<th style="text-align: right;">Mediana (%)</th>
+<th style="text-align: right;">Desv. estándar</th>
+<th style="text-align: right;">Invariantes</th>
+<th style="text-align: right;">Invariantes (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SOLCAR 1</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">94,18</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">13,32</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">70,37</td>
+</tr>
+<tr class="even">
+<td>SOLCAR 2</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: right;">90,42</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">22,47</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">72,94</td>
+</tr>
+<tr class="odd">
+<td>SOLCAR 3</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: right;">91,41</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">22,00</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">77,38</td>
+</tr>
+<tr class="even">
+<td>Resto</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">86,17</td>
+<td style="text-align: right;">92,86</td>
+<td style="text-align: right;">21,03</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">42,55</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Como se observa en <a href="#fig-solcar-conservacion" class="quarto-xref">Figura&nbsp;11</a> y <a href="#tbl-solcar-conservacion" class="quarto-xref">Tabla&nbsp;8</a>, las tres regiones SOLCAR presentan una conservación media superior al 90 %, mientras que el resto de la proteína presenta una conservación media del 86,17 %. SOLCAR 1 presenta la mayor conservación media y la menor desviación estándar, mientras que SOLCAR 3 presenta el mayor porcentaje de aminoácidos invariantes. De los 204 aminoácidos invariantes identificados anteriormente, 184 se encuentran dentro de las regiones SOLCAR, es decir, el 90,20 % de todos los aminoácidos invariantes. En conjunto, el 73,60 % de las posiciones de las regiones SOLCAR son invariantes, frente al 42,55 % del resto de la proteína. La mayor conservación de estas regiones podría estar relacionada con su importancia en el mantenimiento de la estructura tridimensional y la función de la proteína.</p>
+</section>
+</section>
+<section id="identificación-y-selección-de-moldes-experimentales" class="level2">
+<h2 class="anchored" data-anchor-id="identificación-y-selección-de-moldes-experimentales">2.5. Identificación y selección de moldes experimentales</h2>
+<section id="búsqueda-de-estructuras-homólogas-mediante-blastp-contra-pdb" class="level3">
+<h3 class="anchored" data-anchor-id="búsqueda-de-estructuras-homólogas-mediante-blastp-contra-pdb">2.5.1. Búsqueda de estructuras homólogas mediante BLASTp contra PDB</h3>
+<p>Mediante BLASTp contra la base de datos PDB se realizó una búsqueda de proteínas homólogas cuya estructura tridimensional se ha determinado experimentalmente. Se identificó el transportador mitocondrial de ADP/ATP 2 de <em>Saccharomyces cerevisiae</em> como posible molde para el modelado por homología <span class="citation" data-cites="altschul1990 pdb2000">(<a href="#ref-altschul1990" role="doc-biblioref">5</a>,<a href="#ref-pdb2000" role="doc-biblioref">17</a>)</span>.</p>
+<div id="tbl-blast-pdb" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-blast-pdb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;9: Resultados de BLASTp contra PDB para 4C9G.
+</figcaption>
+<div aria-describedby="tbl-blast-pdb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parámetro</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PDB ID</td>
+<td><a href="https://www.rcsb.org/structure/4C9G">4C9G</a></td>
+</tr>
+<tr class="even">
+<td>Cadena</td>
+<td>A</td>
+</tr>
+<tr class="odd">
+<td>Organismo</td>
+<td><em>Saccharomyces cerevisiae</em></td>
+</tr>
+<tr class="even">
+<td>Longitud</td>
+<td>318 aa</td>
+</tr>
+<tr class="odd">
+<td>Identidad de secuencia</td>
+<td>24,35 %</td>
+</tr>
+<tr class="even">
+<td>Cobertura de secuencia</td>
+<td>38 %</td>
+</tr>
+<tr class="odd">
+<td>E-value</td>
+<td>0,041</td>
+</tr>
+<tr class="even">
+<td>Método experimental</td>
+<td>Cristalografía de rayos X</td>
+</tr>
+<tr class="odd">
+<td>Resolución</td>
+<td>2,49 Å</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>La identidad y cobertura de secuencia obtenidas son relativamente bajas. Sin embargo, dado que ambas proteínas pertenecen a la familia de transportadores mitocondriales SLC25, se consideró 4C9G como posible molde para el modelado por homología.</p>
+</section>
+<section id="búsqueda-de-moldes-mediante-swiss-model" class="level3">
+<h3 class="anchored" data-anchor-id="búsqueda-de-moldes-mediante-swiss-model">2.5.2. Búsqueda de moldes mediante SWISS-MODEL</h3>
+<p>Dada la baja cobertura obtenida mediante BLASTp se realizó una búsqueda adicional de moldes mediante SWISS-MODEL. Se identificaron principalmente estructuras experimentales de la proteína desacoplante mitocondrial UCP1 y de transportadores mitocondriales de ADP/ATP <span class="citation" data-cites="swiss2018">(<a href="#ref-swiss2018" role="doc-biblioref">1</a>)</span>.</p>
+<div id="tbl-swiss-moldes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-swiss-moldes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;10: Moldes experimentales identificados mediante SWISS-MODEL.
+</figcaption>
+<div aria-describedby="tbl-swiss-moldes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Molde</th>
+<th>Proteína</th>
+<th>GMQE</th>
+<th>Identidad (%)</th>
+<th>Método</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8HBW</td>
+<td>UCP1</td>
+<td>0,60</td>
+<td>22,30</td>
+<td>Cryo-EM</td>
+</tr>
+<tr class="even">
+<td>9FZQ</td>
+<td>UCP1</td>
+<td>0,60</td>
+<td>22,22</td>
+<td>Cryo-EM</td>
+</tr>
+<tr class="odd">
+<td>8HBV</td>
+<td>UCP1</td>
+<td>0,59</td>
+<td>22,30</td>
+<td>Cryo-EM</td>
+</tr>
+<tr class="even">
+<td>8G8W</td>
+<td>UCP1</td>
+<td>0,59</td>
+<td>22,22</td>
+<td>Cryo-EM</td>
+</tr>
+<tr class="odd">
+<td>1OKC</td>
+<td>Transportador ADP/ATP</td>
+<td>0,58</td>
+<td>21,51</td>
+<td>Rayos X</td>
+</tr>
+<tr class="even">
+<td>2C3E</td>
+<td>Transportador ADP/ATP</td>
+<td>0,58</td>
+<td>21,51</td>
+<td>Rayos X</td>
+</tr>
+<tr class="odd">
+<td>6GCI</td>
+<td>Transportador ADP/ATP</td>
+<td>0,57</td>
+<td>20,60</td>
+<td>Rayos X</td>
+</tr>
+<tr class="even">
+<td>4C9J</td>
+<td>Transportador ADP/ATP 3</td>
+<td>0,56</td>
+<td>20,15</td>
+<td>Rayos X</td>
+</tr>
+<tr class="odd">
+<td>4C9G</td>
+<td>Transportador ADP/ATP 2</td>
+<td>0,55</td>
+<td>20,22</td>
+<td>Rayos X</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Los moldes con mayor GMQE corresponden a la proteína UCP1. También se identificó el molde 4C9G obtenido anteriormente mediante BLASTp. No se seleccionó como molde la estructura de la propia proteína predicha mediante AlphaFold, dado que el objetivo es realizar el modelado a partir de estructuras determinadas experimentalmente.</p>
+</section>
+<section id="comparación-estructural-de-los-moldes-con-alphafold" class="level3">
+<h3 class="anchored" data-anchor-id="comparación-estructural-de-los-moldes-con-alphafold">2.5.3. Comparación estructural de los moldes con AlphaFold</h3>
+<p>Mediante MatchMaker de ChimeraX se realizó una superposición de las estructuras experimentales 4C9G, 8HBW y 9FZQ con la estructura de la proteína problema predicha mediante AlphaFold. Se utilizó el algoritmo Needleman-Wunsch, la matriz BLOSUM62 y un umbral de exclusión iterativa de 2 Å <span class="citation" data-cites="chimerax2021">(<a href="#ref-chimerax2021" role="doc-biblioref">18</a>)</span>.</p>
+<div id="tbl-moldes-rmsd" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-moldes-rmsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;11: Comparación estructural de los moldes experimentales con AlphaFold.
+</figcaption>
+<div aria-describedby="tbl-moldes-rmsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parámetro</th>
+<th>4C9G</th>
+<th>8HBW</th>
+<th>9FZQ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alignment score</td>
+<td>352,1</td>
+<td>427,4</td>
+<td>454,9</td>
+</tr>
+<tr class="even">
+<td>Pares alineados</td>
+<td>249</td>
+<td>265</td>
+<td>265</td>
+</tr>
+<tr class="odd">
+<td>Pares retenidos</td>
+<td>101</td>
+<td>104</td>
+<td>104</td>
+</tr>
+<tr class="even">
+<td>RMSD global (Å)</td>
+<td>7,373</td>
+<td>6,032</td>
+<td>5,843</td>
+</tr>
+<tr class="odd">
+<td>RMSD tras ajuste iterativo (Å)</td>
+<td>1,122</td>
+<td>1,128</td>
+<td>1,129</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>A pesar de las diferencias en la secuencia primaria se observa una organización tridimensional similar de las hélices α. Considerando todos los pares alineados, el menor RMSD se obtuvo utilizando el molde 9FZQ. Sin embargo, tras la exclusión de los pares con mayor desviación se obtuvo un RMSD similar para los tres moldes. Esto indica la existencia de regiones con una elevada similitud estructural, aunque solamente se retuvo aproximadamente el 40 % de los pares alineados.</p>
+<p>Para el modelado por homología se seleccionaron los moldes 8HBW y 9FZQ debido a sus valores de GMQE y su similitud estructural con la proteína problema. También se seleccionó el molde 4C9G identificado anteriormente mediante BLASTp para comparar los resultados obtenidos utilizando dos tipos diferentes de transportadores mitocondriales como molde.</p>
+</section>
+</section>
+<section id="modelado-de-la-estructura-tridimensional" class="level2">
+<h2 class="anchored" data-anchor-id="modelado-de-la-estructura-tridimensional">2.6. Modelado de la estructura tridimensional</h2>
+<section id="predicción-estructural-mediante-alphafold" class="level3">
+<h3 class="anchored" data-anchor-id="predicción-estructural-mediante-alphafold">2.6.1. Predicción estructural mediante AlphaFold</h3>
+<p>Mediante AlphaFold se generó una predicción de la estructura tridimensional de la proteína problema. Para evaluar la confianza de la predicción (<a href="#fig-plddt" class="quarto-xref">Figura&nbsp;13</a>) se analizaron los valores de pLDDT correspondientes a los carbonos α de los 297 aminoácidos, obteniendo un valor medio de 74,65 <span class="citation" data-cites="alphafold2024">(<a href="#ref-alphafold2024" role="doc-biblioref">19</a>)</span>.</p>
+<div id="fig-alphafold" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-alphafold-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/alphafold_plddt.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alphafold-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;12: Estructura tridimensional de SLC25A51 predicha mediante AlphaFold y coloreada según los valores de pLDDT
+</figcaption>
+</figure>
+</div>
+<p>Las tres regiones SOLCAR presentan valores medios de pLDDT de 78,61, 79,22 y 82,04 respectivamente, mientras que la región N-terminal presenta un valor medio de solamente 32,31. Estos resultados coinciden con la predicción de desorden intrínseco de la región N-terminal obtenida mediante InterPro.</p>
+<div id="fig-plddt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plddt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/alphafold_confianza.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plddt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;13: Confianza de la predicción estructural por posición de aminoácidos mediante pLDDT
+</figcaption>
+</figure>
+</div>
+<p>La estructura obtenida presenta una organización predominantemente α-helicoidal con una cavidad central y se utilizó como referencia para comparar los modelos obtenidos mediante modelado por homología.</p>
+</section>
+<section id="modelado-por-homología-mediante-swiss-model" class="level3">
+<h3 class="anchored" data-anchor-id="modelado-por-homología-mediante-swiss-model">2.6.2. Modelado por homología mediante SWISS-MODEL</h3>
+<p>Utilizando los tres moldes experimentales seleccionados anteriormente se generaron tres modelos tridimensionales mediante SWISS-MODEL <span class="citation" data-cites="swiss2018">(<a href="#ref-swiss2018" role="doc-biblioref">1</a>)</span> (<a href="#fig-swiss-modelos" class="quarto-xref">Figura&nbsp;14</a>).</p>
+<div id="tbl-swiss-modelos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-swiss-modelos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;12: Características de los modelos obtenidos mediante SWISS-MODEL.
+</figcaption>
+<div aria-describedby="tbl-swiss-modelos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parámetro</th>
+<th>Modelo 01</th>
+<th>Modelo 02</th>
+<th>Modelo 03</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Molde</td>
+<td>8HBW</td>
+<td>9FZQ</td>
+<td>4C9G</td>
+</tr>
+<tr class="even">
+<td>Identidad (%)</td>
+<td>22,30</td>
+<td>22,22</td>
+<td>20,22</td>
+</tr>
+<tr class="odd">
+<td>Cobertura (%)</td>
+<td>91</td>
+<td>91</td>
+<td>90</td>
+</tr>
+<tr class="even">
+<td>Región modelada</td>
+<td>27–297</td>
+<td>27–297</td>
+<td>31–294</td>
+</tr>
+<tr class="odd">
+<td>Estado oligomérico</td>
+<td>Monómero</td>
+<td>Monómero</td>
+<td>Monómero</td>
+</tr>
+<tr class="even">
+<td>Ligandos</td>
+<td>Ninguno</td>
+<td>Ninguno</td>
+<td>Ninguno</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="fig-swiss-modelos" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-swiss-modelos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/swiss_super.png" class="img-fluid figure-img"></p>
+<figcaption>Superposición</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/swiss_4c9g.pdb.png" class="img-fluid figure-img"></p>
+<figcaption>4C9G</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/swiss_8hbw.pdb.png" class="img-fluid figure-img"></p>
+<figcaption>8HBW</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/swiss_9fzq.pdb.png" class="img-fluid figure-img"></p>
+<figcaption>9FZQ</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-swiss-modelos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;14: Representación tridimensional y superposición de los modelos obtenidos mediante SWISS-MODEL.
+</figcaption>
+</figure>
+</div>
+<p>A pesar de la baja identidad de secuencia se consiguió modelar aproximadamente el 90 % de la proteína problema. En los tres modelos queda sin modelar principalmente la región N-terminal. Sin embargo, las tres regiones SOLCAR se encuentran prácticamente completas. Los ligandos presentes en los moldes experimentales no se incorporaron a los modelos debido a la falta de conservación de los sitios de unión según SWISS-MODEL.</p>
+</section>
+<section id="modelado-por-homología-mediante-phyre2" class="level3">
+<h3 class="anchored" data-anchor-id="modelado-por-homología-mediante-phyre2">2.6.3. Modelado por homología mediante Phyre2</h3>
+<p>Mediante Phyre2 se identificaron diferentes moldes experimentales correspondientes principalmente a las proteínas desacoplantes mitocondriales UCP1 y UCP2 y a los transportadores mitocondriales de ADP/ATP <span class="citation" data-cites="phyre2015">(<a href="#ref-phyre2015" role="doc-biblioref">16</a>)</span>.</p>
+<div id="fig-phyre-modelos" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-phyre-modelos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/phyre_super.png" class="img-fluid figure-img"></p>
+<figcaption>Superposición</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/phyre_2lck.pdb.png" class="img-fluid figure-img"></p>
+<figcaption>2LCK</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/phyre_4c9g.pdb.png" class="img-fluid figure-img"></p>
+<figcaption>4C9G</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/phyre_8hbw.pdb.png" class="img-fluid figure-img"></p>
+<figcaption>8HBW</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/phyre_9fzq.pdb.png" class="img-fluid figure-img"></p>
+<figcaption>9FZQ</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-phyre-modelos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;15: Representación tridimensional y superposición de los modelos obtenidos mediante Phyre2.
+</figcaption>
+</figure>
+</div>
+<p>Los resultados obtenidos son similares a los obtenidos mediante SWISS-MODEL. Sin embargo, Phyre2 identifica como primer candidato la proteína UCP2 (2LCK), con una identidad de secuencia del 21 %.</p>
+<p>Se seleccionaron cuatro moldes para realizar el modelado por homología, tres de ellos utilizados anteriormente mediante SWISS-MODEL, lo que permite comparar ambos métodos utilizando los mismos moldes experimentales. El porcentaje de posiciones alineadas respecto a los 297 aminoácidos de AlphaFold se estimó mediante ChimeraX. No corresponde necesariamente a la cobertura original de Phyre2 (<a href="#fig-phyre-modelos" class="quarto-xref">Figura&nbsp;15</a>).</p>
+<div id="tbl-phyre-moldes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-phyre-moldes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;13: Moldes seleccionados mediante Phyre2.
+</figcaption>
+<div aria-describedby="tbl-phyre-moldes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Molde</th>
+<th>Proteína</th>
+<th style="text-align: right;">Confianza (%)</th>
+<th style="text-align: right;">Identidad (%)</th>
+<th style="text-align: right;">Posiciones alineadas (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2LCK</td>
+<td>UCP2</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">89,23</td>
+</tr>
+<tr class="even">
+<td>8HBW</td>
+<td>UCP1</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">90,24</td>
+</tr>
+<tr class="odd">
+<td>9FZQ</td>
+<td>UCP1</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">91,25</td>
+</tr>
+<tr class="even">
+<td>4C9G</td>
+<td>Transportador ADP/ATP</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">83,50</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+<section id="evaluación-y-comparación-de-los-modelos-tridimensionales" class="level2">
+<h2 class="anchored" data-anchor-id="evaluación-y-comparación-de-los-modelos-tridimensionales">2.7. Evaluación y comparación de los modelos tridimensionales</h2>
+<section id="evaluación-de-calidad-mediante-gmqe-y-qmeandisco" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación-de-calidad-mediante-gmqe-y-qmeandisco">2.7.1. Evaluación de calidad mediante GMQE y QMEANDisCo</h3>
+<p>La calidad de los modelos obtenidos mediante SWISS-MODEL se evaluó utilizando GMQE y QMEANDisCo. Ambos parámetros presentan valores entre 0 y 1, donde un valor próximo a 1 indica una mayor calidad estimada <span class="citation" data-cites="swiss2018 qmean2020">(<a href="#ref-swiss2018" role="doc-biblioref">1</a>,<a href="#ref-qmean2020" role="doc-biblioref">20</a>)</span>.</p>
+<div id="tbl-swiss-calidad" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-swiss-calidad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;14: Evaluación de calidad de los modelos de SWISS-MODEL.
+</figcaption>
+<div aria-describedby="tbl-swiss-calidad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parámetro</th>
+<th>8HBW</th>
+<th>9FZQ</th>
+<th>4C9G</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GMQE inicial</td>
+<td>0,60</td>
+<td>0,60</td>
+<td>0,55</td>
+</tr>
+<tr class="even">
+<td>GMQE final</td>
+<td>0,55</td>
+<td>0,56</td>
+<td>0,53</td>
+</tr>
+<tr class="odd">
+<td>QMEANDisCo</td>
+<td>0,59 ± 0,05</td>
+<td>0,59 ± 0,05</td>
+<td>0,55 ± 0,05</td>
+</tr>
+<tr class="even">
+<td>QMEAN Z-score</td>
+<td>−4,93</td>
+<td>−4,45</td>
+<td>−5,66</td>
+</tr>
+<tr class="odd">
+<td>Cβ</td>
+<td>−4,26</td>
+<td>−4,24</td>
+<td>−5,47</td>
+</tr>
+<tr class="even">
+<td>All Atom</td>
+<td>−1,43</td>
+<td>−1,49</td>
+<td>−1,71</td>
+</tr>
+<tr class="odd">
+<td>Solvation</td>
+<td>−0,54</td>
+<td>−0,36</td>
+<td>−1,36</td>
+</tr>
+<tr class="even">
+<td>Torsion</td>
+<td>−4,22</td>
+<td>−3,76</td>
+<td>−4,46</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Los tres modelos presentan una calidad estructural estimada moderada. Los modelos generados a partir de UCP1 presentan valores de QMEANDisCo ligeramente superiores al modelo generado a partir del transportador de ADP/ATP. Considerando conjuntamente los parámetros analizados, el modelo generado a partir de 9FZQ presenta una calidad estimada ligeramente superior, aunque las diferencias entre los modelos son pequeñas. Los modelos obtenidos mediante Phyre2 se evaluaron adicionalmente mediante el servidor QMEAN utilizando los archivos PDB, lo que permitió comparar la calidad estructural estimada de los modelos obtenidos mediante ambos métodos <span class="citation" data-cites="qmean2020">(<a href="#ref-qmean2020" role="doc-biblioref">20</a>)</span>.</p>
+<div id="tbl-qmean-comparacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-qmean-comparacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;15: Comparación de la calidad estimada mediante QMEANDisCo.
+</figcaption>
+<div aria-describedby="tbl-qmean-comparacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Molde</th>
+<th style="text-align: right;">SWISS-MODEL</th>
+<th style="text-align: right;">Phyre2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4C9G</td>
+<td style="text-align: right;">0,550 ± 0,050</td>
+<td style="text-align: right;">0,486 ± 0,053</td>
+</tr>
+<tr class="even">
+<td>8HBW</td>
+<td style="text-align: right;">0,590 ± 0,050</td>
+<td style="text-align: right;">0,521 ± 0,051</td>
+</tr>
+<tr class="odd">
+<td>9FZQ</td>
+<td style="text-align: right;">0,590 ± 0,050</td>
+<td style="text-align: right;">0,532 ± 0,051</td>
+</tr>
+<tr class="even">
+<td>2LCK</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">0,433 ± 0,051</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Comparando los mismos moldes (<a href="#fig-qmean-comparacion" class="quarto-xref">Figura&nbsp;16</a>) se observa que SWISS-MODEL presenta valores superiores de QMEANDisCo. El modelo basado en 2LCK presenta la menor calidad estimada, a pesar de la confianza del 100 % en la identificación del molde.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-qmean-comparacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qmean-comparacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Cuaderno_files/figure-html/fig-qmean-comparacion-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qmean-comparacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;16: Comparación de QMEANDisCo de los modelos obtenidos mediante SWISS-MODEL y Phyre2.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="comparación-estructural-mediante-chimerax-y-rmsd" class="level3">
+<h3 class="anchored" data-anchor-id="comparación-estructural-mediante-chimerax-y-rmsd">2.7.2. Comparación estructural mediante ChimeraX y RMSD</h3>
+<p><strong>Resultados de Phyre2</strong></p>
+<p>Se utilizó MatchMaker con los mismos parámetros que en la comparación de los moldes experimentales.</p>
+<div id="tbl-phyre-rmsd" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-phyre-rmsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;16: Comparación estructural de los modelos Phyre2 mediante MatchMaker.
+</figcaption>
+<div aria-describedby="tbl-phyre-rmsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parámetro</th>
+<th>2LCK (#19)</th>
+<th>8HBW (#18)</th>
+<th>9FZQ (#17)</th>
+<th>4C9G (#20)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alignment score</td>
+<td>1317,7</td>
+<td>1340,8</td>
+<td>1358,0</td>
+<td>1194,7</td>
+</tr>
+<tr class="even">
+<td>Pares alineados</td>
+<td>265</td>
+<td>268</td>
+<td>271</td>
+<td>248</td>
+</tr>
+<tr class="odd">
+<td>Pares retenidos</td>
+<td>37</td>
+<td>93</td>
+<td>92</td>
+<td>102</td>
+</tr>
+<tr class="even">
+<td>Pares retenidos (%)</td>
+<td>13,96</td>
+<td>34,70</td>
+<td>33,95</td>
+<td>41,13</td>
+</tr>
+<tr class="odd">
+<td>RMSD global (Å)</td>
+<td>8,737</td>
+<td>5,707</td>
+<td>5,850</td>
+<td>5,627</td>
+</tr>
+<tr class="even">
+<td>RMSD tras ajuste iterativo (Å)</td>
+<td>1,371</td>
+<td>1,106</td>
+<td>1,126</td>
+<td>1,123</td>
+</tr>
+<tr class="odd">
+<td>QMEANDisCo</td>
+<td>0,433</td>
+<td>0,521</td>
+<td>0,532</td>
+<td>0,486</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Para comparar los modelos utilizando las mismas posiciones de aminoácidos se exportaron las estructuras en formato PDB y se procesaron mediante R utilizando bio3d y pwalign. Se identificaron 248 posiciones comunes y se superpusieron los carbonos α sin excluir los pares con mayor desviación <span class="citation" data-cites="bio3d2006 pwalign">(<a href="#ref-bio3d2006" role="doc-biblioref">21</a>,<a href="#ref-pwalign" role="doc-biblioref">22</a>)</span>. Los resultados se recogen en <a href="#tbl-rmsd-comunes" class="quarto-xref">Tabla&nbsp;17</a>.</p>
+<div id="tbl-rmsd-comunes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rmsd-comunes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;17: RMSD sobre las 248 posiciones comunes respecto a AlphaFold.
+</figcaption>
+<div aria-describedby="tbl-rmsd-comunes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Molde</th>
+<th style="text-align: right;">Pares</th>
+<th style="text-align: right;">RMSD (Å)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SWISS-MODEL</td>
+<td>4C9G</td>
+<td style="text-align: right;">248</td>
+<td style="text-align: right;">4,316</td>
+</tr>
+<tr class="even">
+<td>SWISS-MODEL</td>
+<td>8HBW</td>
+<td style="text-align: right;">248</td>
+<td style="text-align: right;">4,427</td>
+</tr>
+<tr class="odd">
+<td>SWISS-MODEL</td>
+<td>9FZQ</td>
+<td style="text-align: right;">248</td>
+<td style="text-align: right;">4,493</td>
+</tr>
+<tr class="even">
+<td>Phyre2</td>
+<td>8HBW</td>
+<td style="text-align: right;">248</td>
+<td style="text-align: right;">4,576</td>
+</tr>
+<tr class="odd">
+<td>Phyre2</td>
+<td>9FZQ</td>
+<td style="text-align: right;">248</td>
+<td style="text-align: right;">4,603</td>
+</tr>
+<tr class="even">
+<td>Phyre2</td>
+<td>4C9G</td>
+<td style="text-align: right;">248</td>
+<td style="text-align: right;">4,783</td>
+</tr>
+<tr class="odd">
+<td>Phyre2</td>
+<td>2LCK</td>
+<td style="text-align: right;">248</td>
+<td style="text-align: right;">7,122</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Comparando los resultados obtenidos utilizando las mismas posiciones de aminoácidos (<a href="#fig-rmsd-comunes" class="quarto-xref">Figura&nbsp;17</a>) se observa que los modelos generados mediante SWISS-MODEL presentan un menor RMSD que los modelos generados mediante Phyre2 para los mismos moldes. El modelo generado a partir de 4C9G mediante SWISS-MODEL presenta la mayor similitud estructural respecto a AlphaFold, mientras que el modelo generado a partir de 2LCK mediante Phyre2 presenta la mayor desviación estructural. Estos resultados son coherentes con los obtenidos anteriormente mediante ChimeraX y permiten realizar una comparación más homogénea entre los modelos.</p>
+<div id="fig-rmsd-comunes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rmsd-comunes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/rmsd_moldes.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rmsd-comunes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;17: Comparación del RMSD de los modelos obtenidos mediante SWISS-MODEL y Phyre2 respecto a AlphaFold utilizando 248 posiciones de aminoácidos comunes
+</figcaption>
+</figure>
+</div>
+<p><strong>Comparación de todos los modelos</strong></p>
+<div id="tbl-modelos-comparacion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-modelos-comparacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;18: Comparación de calidad y RMSD de los siete modelos.
+</figcaption>
+<div aria-describedby="tbl-modelos-comparacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Molde</th>
+<th>Método</th>
+<th>QMEANDisCo</th>
+<th>RMSD global (Å)</th>
+<th>RMSD iterativo (Å)</th>
+<th>Pares retenidos (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8HBW</td>
+<td>SWISS-MODEL</td>
+<td>0,590</td>
+<td>5,748</td>
+<td>1,062</td>
+<td>38,38</td>
+</tr>
+<tr class="even">
+<td>9FZQ</td>
+<td>SWISS-MODEL</td>
+<td>0,590</td>
+<td>5,710</td>
+<td>1,066</td>
+<td>36,90</td>
+</tr>
+<tr class="odd">
+<td>4C9G</td>
+<td>SWISS-MODEL</td>
+<td>0,550</td>
+<td>5,504</td>
+<td>1,180</td>
+<td>48,11</td>
+</tr>
+<tr class="even">
+<td>8HBW</td>
+<td>Phyre2</td>
+<td>0,521</td>
+<td>5,707</td>
+<td>1,106</td>
+<td>34,70</td>
+</tr>
+<tr class="odd">
+<td>9FZQ</td>
+<td>Phyre2</td>
+<td>0,532</td>
+<td>5,850</td>
+<td>1,126</td>
+<td>33,95</td>
+</tr>
+<tr class="even">
+<td>4C9G</td>
+<td>Phyre2</td>
+<td>0,486</td>
+<td>5,627</td>
+<td>1,123</td>
+<td>41,13</td>
+</tr>
+<tr class="odd">
+<td>2LCK</td>
+<td>Phyre2</td>
+<td>0,433</td>
+<td>8,737</td>
+<td>1,371</td>
+<td>13,96</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="selección-del-modelo-por-homología" class="level3">
+<h3 class="anchored" data-anchor-id="selección-del-modelo-por-homología">2.7.3. Selección del modelo por homología</h3>
+<div id="tbl-seleccion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-seleccion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;19: Selección del modelo según los parámetros evaluados.
+</figcaption>
+<div aria-describedby="tbl-seleccion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Criterio</th>
+<th>Mejor resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GMQE</td>
+<td>SWISS-MODEL 9FZQ</td>
+</tr>
+<tr class="even">
+<td>QMEANDisCo</td>
+<td>SWISS-MODEL 8HBW y 9FZQ</td>
+</tr>
+<tr class="odd">
+<td>RMSD global</td>
+<td>SWISS-MODEL 4C9G</td>
+</tr>
+<tr class="even">
+<td>RMSD iterativo</td>
+<td>SWISS-MODEL 8HBW</td>
+</tr>
+<tr class="odd">
+<td>Pares retenidos</td>
+<td>SWISS-MODEL 4C9G</td>
+</tr>
+<tr class="even">
+<td>RMSD sobre posiciones comunes</td>
+<td>SWISS-MODEL 4C9G</td>
+</tr>
+<tr class="odd">
+<td>Mejor QMEANDisCo de Phyre2</td>
+<td>Phyre2 9FZQ</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Considerando conjuntamente los resultados obtenidos mediante GMQE, QMEANDisCo y RMSD, se observa que los modelos generados mediante SWISS-MODEL presentan mayores valores de QMEANDisCo y menores RMSD sobre las posiciones comunes que los generados mediante Phyre2 para los mismos moldes.</p>
+<p>El modelo generado a partir de 9FZQ presenta una calidad estructural estimada ligeramente superior según GMQE y QMEAN Z-score, aunque comparte el mismo QMEANDisCo con 8HBW y las incertidumbres se solapan. Por otra parte, el modelo generado a partir de 4C9G presenta una mayor similitud estructural respecto a AlphaFold.</p>
+<p>Por lo tanto, se seleccionó el modelo generado mediante SWISS-MODEL utilizando 9FZQ como molde, priorizando los parámetros de calidad estructural estimada frente a la similitud con otra estructura predicha. Esta selección no implica que el modelo sea necesariamente más próximo a la estructura real de la proteína, dado que no disponemos de una estructura experimental de referencia en este análisis.</p>
+</section>
+</section>
+<section id="relación-entre-secuencia-estructura-y-función" class="level2">
+<h2 class="anchored" data-anchor-id="relación-entre-secuencia-estructura-y-función">2.8. Relación entre secuencia, estructura y función</h2>
+<section id="organización-tridimensional-de-las-regiones-solcar" class="level3">
+<h3 class="anchored" data-anchor-id="organización-tridimensional-de-las-regiones-solcar">2.8.1. Organización tridimensional de las regiones SOLCAR</h3>
+<p>Mediante ChimeraX (<a href="#fig-solcar-estructura" class="quarto-xref">Figura&nbsp;19</a>) se visualizaron las tres regiones SOLCAR identificadas anteriormente, utilizando un color diferente para cada región.</p>
+<div id="tbl-solcar-colores" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-solcar-colores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;20: Regiones SOLCAR representadas mediante ChimeraX.
+</figcaption>
+<div aria-describedby="tbl-solcar-colores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Región</th>
+<th>Posiciones</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SOLCAR 1</td>
+<td>28–108</td>
+<td>Azul</td>
+</tr>
+<tr class="even">
+<td>SOLCAR 2</td>
+<td>116–200</td>
+<td>Verde</td>
+</tr>
+<tr class="odd">
+<td>SOLCAR 3</td>
+<td>213–296</td>
+<td>Naranja</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Se observa que las tres regiones están constituidas principalmente por hélices α que conjuntamente forman la estructura tridimensional del transportador.</p>
+<p>La organización de las tres regiones es coherente con la estructura característica de los transportadores mitocondriales, formada por seis hélices α transmembrana y tres hélices α más cortas.</p>
+<div id="fig-solcar-esquema" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-solcar-esquema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/solcar_esquema.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-solcar-esquema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;18: Esquema de la organización de las regiones SOLCAR en la secuencia y en la membrana
+</figcaption>
+</figure>
+</div>
+<div id="fig-solcar-estructura" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-solcar-estructura-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/solcar.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-solcar-estructura-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;19: Representación tridimensional de las tres regiones SOLCAR mediante ChimeraX. SOLCAR 1 en azul, SOLCAR 2 en verde y SOLCAR 3 en naranja
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="distribución-estructural-de-los-aminoácidos-invariantes" class="level3">
+<h3 class="anchored" data-anchor-id="distribución-estructural-de-los-aminoácidos-invariantes">2.8.2. Distribución estructural de los aminoácidos invariantes</h3>
+<p>Mediante ChimeraX se representaron los 204 aminoácidos invariantes identificados anteriormente sobre la estructura tridimensional predicha mediante AlphaFold. Los aminoácidos invariantes se representaron en naranja y el resto en gris (<a href="#fig-invariantes" class="quarto-xref">Figura&nbsp;20</a>).</p>
+<p>Se observa que los aminoácidos invariantes se distribuyen principalmente a lo largo de las hélices α que forman las tres regiones SOLCAR. También se observa una elevada presencia de aminoácidos invariantes en la superficie de la cavidad central del transportador. En el extremo N-terminal se observa una mayor proporción de aminoácidos variables en comparación con la estructura helicoidal. Estos resultados son coherentes con el análisis de conservación realizado anteriormente, donde se determinó que 184 de los 204 aminoácidos invariantes pertenecen a las regiones SOLCAR.</p>
+<p>La elevada conservación de los aminoácidos que forman la cavidad central podría estar relacionada tanto con el mantenimiento de la estructura tridimensional como con el reconocimiento y transporte de NAD⁺. Sin embargo, a partir de este análisis no se puede determinar directamente qué aminoácidos participan en la unión del sustrato.</p>
+<div id="fig-invariantes" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-invariantes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/struct_mol_surf.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Superficie molecular</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/struct_mol_surf_central_cavity.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Vista de la cavidad central</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/struct_mol_surf_lateral.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Vista lateral y extremo N-terminal</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-invariantes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;20: Distribución de los aminoácidos invariantes (naranja) sobre la estructura de SLC25A51. Los demás residuos se representan en gris.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="análisis-de-la-hidrofobicidad-de-la-superficie-molecular" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-de-la-hidrofobicidad-de-la-superficie-molecular">2.8.3. Análisis de la hidrofobicidad de la superficie molecular</h3>
+<p>Mediante ChimeraX se generó una representación de la superficie molecular de la proteína en función de la hidrofobicidad de los aminoácidos (<a href="#fig-hidrofobicidad" class="quarto-xref">Figura&nbsp;21</a>). Se observa la presencia de regiones hidrófobas en el exterior de la estructura formada por las hélices α. Esta distribución es coherente con el carácter transmembrana de la proteína, dado que permite la interacción con las cadenas hidrocarbonadas de los fosfolípidos de la membrana mitocondrial interna. También se observan regiones hidrófilas que podrían estar orientadas hacia el medio acuoso o hacia el interior del transportador.</p>
+<div id="fig-hidrofobicidad" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hidrofobicidad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/superficie_transmembrana.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Región N-terminal y superficie exterior</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/superficie_cavidad.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Vista de la cavidad central</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hidrofobicidad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;21: Superficie molecular de SLC25A51 coloreada según la hidrofobicidad de los aminoácidos (turquesa hidrofilico, amarillo-maron hidrofobico).
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="características-estructurales-relacionadas-con-el-transporte-de-nad" class="level3">
+<h3 class="anchored" data-anchor-id="características-estructurales-relacionadas-con-el-transporte-de-nad">2.8.4. Características estructurales relacionadas con el transporte de NAD⁺</h3>
+<p>En la estructura tridimensional se observa una cavidad central, aunque no se observa un túnel continuo que atraviese toda la proteína. Esto es coherente con la función de la proteína como transportador. El mecanismo de acceso alternante característico de esta familia implica cambios conformacionales que permiten exponer el sitio de unión hacia ambos lados de la membrana de forma alternada.</p>
+<p>Sin embargo, dado que los modelos obtenidos representan una estructura estática, no se pueden observar directamente los cambios conformacionales relacionados con el transporte de NAD⁺.</p>
+</section>
+</section>
+</section>
+<section id="discusión" class="level1">
+<h1>3. Discusión</h1>
+<p>Mediante las diferentes herramientas bioinformáticas utilizadas se identificaron características estructurales y funcionales de la proteína SLC25A51. El análisis de conservación muestra una elevada similitud de secuencia entre las proteínas homólogas seleccionadas, especialmente en las regiones SOLCAR, donde se encuentran 184 de los 204 aminoácidos invariantes. Sin embargo, todos los organismos analizados pertenecen a mamíferos, por lo que sería interesante ampliar el análisis utilizando organismos evolutivamente más distantes.</p>
+<p>La identificación de tres regiones repetitivas SOLCAR y el predominio de hélices α son coherentes con la estructura característica de los transportadores mitocondriales. Phyre2 identificó seis hélices transmembrana, mientras que DeepTMHMM y Phobius identificaron menos segmentos.</p>
+<p>A pesar de la baja identidad de secuencia entre la proteína problema y los moldes experimentales se observa una similitud en la organización tridimensional de las hélices α, lo que indica una conservación parcial de la estructura tridimensional a pesar de las diferencias en la estructura primaria.</p>
+<p>Se generaron siete modelos mediante SWISS-MODEL y Phyre2. Los modelos de SWISS-MODEL presentan mayores valores de QMEANDisCo y menores RMSD sobre las 248 posiciones comunes para los mismos moldes. Se seleccionó el modelo basado en 9FZQ por su calidad estimada, aunque 4C9G presenta una mayor similitud respecto a AlphaFold. Esta comparación no permite validar experimentalmente los modelos.</p>
+<p>La selección de proteínas homólogas no garantiza que todas sean ortólogas. Además, las diferencias conformacionales entre los moldes y la incertidumbre de AlphaFold pueden contribuir a los valores de RMSD.</p>
+<p>La utilización de diferentes herramientas permite obtener información complementaria sobre la estructura de la proteína, aunque ninguna de las predicciones sustituye la determinación experimental de su estructura tridimensional.</p>
+</section>
+<section id="conclusiones" class="level1">
+<h1>4. Conclusiones</h1>
+<ul>
+<li><p>Se identificó la proteína problema como el transportador mitocondrial de NAD⁺ SLC25A51</p></li>
+<li><p>Se identificaron 204 posiciones de aminoácidos invariantes y una conservación media de secuencia del 91,05 %</p></li>
+<li><p>Se identificaron tres regiones repetitivas SOLCAR características de los transportadores mitocondriales</p></li>
+<li><p>Se predijo una estructura tridimensional constituida principalmente por hélices α y se identificaron seis posibles segmentos transmembrana mediante Phyre2</p></li>
+<li><p>Se generaron siete modelos mediante SWISS-MODEL y Phyre2</p></li>
+<li><p>Se seleccionó el modelo de SWISS-MODEL basado en 9FZQ por su calidad estructural estimada</p></li>
+<li><p>Las tres regiones SOLCAR contienen 184 de los 204 aminoácidos invariantes</p></li>
+<li><p>Se observó una conservación parcial de la estructura tridimensional a pesar de la baja identidad de secuencia con los moldes experimentales</p></li>
+<li><p>Se identificaron regiones hidrófobas en la superficie exterior de la proteína, coherentes con su carácter transmembrana</p></li>
+</ul>
+</section>
+<section id="bibliografía" class="level1">
+<h1>5. Bibliografía</h1>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-swiss2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline"><span class="nocase">Waterhouse A et&nbsp;al.</span> SWISS-MODEL: homology modelling of protein structures and complexes. Nucleic Acids Research. 2018;46:W296-303. doi:<a href="https://doi.org/10.1093/nar/gky427">10.1093/nar/gky427</a></div>
+</div>
+<div id="ref-uniprot" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">UniProtKB: Q9H1U9 [Internet]. [citado 20 de noviembre de 2026]. Disponible en: <a href="https://www.uniprot.org/uniprotkb/Q9H1U9/entry">https://www.uniprot.org/uniprotkb/Q9H1U9/entry</a></div>
+</div>
+<div id="ref-luongo2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline"><span class="nocase">Luongo T et&nbsp;al.</span> SLC25A51 is a mammalian mitochondrial NAD+ transporter. Nature. 2020;588:174-9. doi:<a href="https://doi.org/10.1038/s41586-020-2741-7">10.1038/s41586-020-2741-7</a></div>
+</div>
+<div id="ref-protparam" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">ExPASy ProtParam [Internet]. [citado 20 de noviembre de 2026]. Disponible en: <a href="https://web.expasy.org/protparam/">https://web.expasy.org/protparam/</a></div>
+</div>
+<div id="ref-altschul1990" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Altschul S, Gish W, Miller W, Myers E, Lipman D. Basic local alignment search tool. Journal of Molecular Biology. 1990;215:403-10. doi:<a href="https://doi.org/10.1016/S0022-2836(05)80360-2">10.1016/S0022-2836(05)80360-2</a></div>
+</div>
+<div id="ref-sievers2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline"><span class="nocase">Sievers F et&nbsp;al.</span> Fast, scalable generation of high-quality protein multiple sequence alignments using Clustal Omega. Molecular Systems Biology. 2011;7:539. doi:<a href="https://doi.org/10.1038/msb.2011.75">10.1038/msb.2011.75</a></div>
+</div>
+<div id="ref-phangorn2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Schliep K. phangorn: phylogenetic analysis in R. Bioinformatics. 2011;27:592-3. doi:<a href="https://doi.org/10.1093/bioinformatics/btq706">10.1093/bioinformatics/btq706</a></div>
+</div>
+<div id="ref-jtt1992" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Jones D, Taylor W, Thornton J. The rapid generation of mutation data matrices from protein sequences. Computer Applications in the Biosciences. 1992;8:275-82. doi:<a href="https://doi.org/10.1093/bioinformatics/8.3.275">10.1093/bioinformatics/8.3.275</a></div>
+</div>
+<div id="ref-itol" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Interactive Tree Of Life [Internet]. [citado 20 de noviembre de 2026]. Disponible en: <a href="https://itol.embl.de/">https://itol.embl.de/</a></div>
+</div>
+<div id="ref-jpred2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Drozdetskiy A, Cole C, Procter J, Barton G. JPred4: a protein secondary structure prediction server. Nucleic Acids Research. 2015;43:W389-94. doi:<a href="https://doi.org/10.1093/nar/gkv332">10.1093/nar/gkv332</a></div>
+</div>
+<div id="ref-interpro" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">InterPro [Internet]. [citado 20 de noviembre de 2026]. Disponible en: <a href="https://www.ebi.ac.uk/interpro/">https://www.ebi.ac.uk/interpro/</a></div>
+</div>
+<div id="ref-prosite2006" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline"><span class="nocase">Castro E de et&nbsp;al.</span> ScanProsite: detection of PROSITE signature matches and ProRule-associated functional and structural residues in proteins. Nucleic Acids Research. 2006;34:W362-5. doi:<a href="https://doi.org/10.1093/nar/gkl124">10.1093/nar/gkl124</a></div>
+</div>
+<div id="ref-ps50920" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">PROSITE: SOLCAR (PS50920) [Internet]. [citado 20 de noviembre de 2026]. Disponible en: <a href="https://prosite.expasy.org/PS50920">https://prosite.expasy.org/PS50920</a></div>
+</div>
+<div id="ref-phobius2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Käll L, Krogh A, Sonnhammer E. A combined transmembrane topology and signal peptide prediction method. Journal of Molecular Biology. 2004;338:1027-36. doi:<a href="https://doi.org/10.1016/j.jmb.2004.03.016">10.1016/j.jmb.2004.03.016</a></div>
+</div>
+<div id="ref-deeptmhmm" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">DeepTMHMM [Internet]. [citado 20 de noviembre de 2026]. Disponible en: <a href="https://dtu.biolib.com/DeepTMHMM">https://dtu.biolib.com/DeepTMHMM</a></div>
+</div>
+<div id="ref-phyre2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Kelley L, Mezulis S, Yates C, Wass M, Sternberg M. The Phyre2 web portal for protein modeling, prediction and analysis. Nature Protocols. 2015;10:845-58. doi:<a href="https://doi.org/10.1038/nprot.2015.053">10.1038/nprot.2015.053</a></div>
+</div>
+<div id="ref-pdb2000" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline"><span class="nocase">Berman H et&nbsp;al.</span> The Protein Data Bank. Nucleic Acids Research. 2000;28:235-42. doi:<a href="https://doi.org/10.1093/nar/28.1.235">10.1093/nar/28.1.235</a></div>
+</div>
+<div id="ref-chimerax2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline"><span class="nocase">Pettersen E et&nbsp;al.</span> UCSF ChimeraX: Structure visualization for researchers, educators, and developers. Protein Science. 2021;30:70-82. doi:<a href="https://doi.org/10.1002/pro.3943">10.1002/pro.3943</a></div>
+</div>
+<div id="ref-alphafold2024" class="csl-entry" role="listitem">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline"><span class="nocase">Abramson J et&nbsp;al.</span> Accurate structure prediction of biomolecular interactions with AlphaFold 3. Nature. 2024;630:493-500. doi:<a href="https://doi.org/10.1038/s41586-024-07487-w">10.1038/s41586-024-07487-w</a></div>
+</div>
+<div id="ref-qmean2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Studer G, Rempfer C, Waterhouse A, Gumienny R, Haas J, Schwede T. QMEANDisCo—distance constraints applied on model quality estimation. Bioinformatics. 2020;36:1765-71. doi:<a href="https://doi.org/10.1093/bioinformatics/btz828">10.1093/bioinformatics/btz828</a></div>
+</div>
+<div id="ref-bio3d2006" class="csl-entry" role="listitem">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Grant B, Rodrigues A, ElSawy K, McCammon J, Caves L. Bio3d: an R package for the comparative analysis of protein structures. Bioinformatics. 2006;22:2695-6. doi:<a href="https://doi.org/10.1093/bioinformatics/btl461">10.1093/bioinformatics/btl461</a></div>
+</div>
+<div id="ref-pwalign" class="csl-entry" role="listitem">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Bioconductor: pwalign [Internet]. [citado 20 de noviembre de 2026]. Disponible en: <a href="https://bioconductor.org/packages/pwalign/">https://bioconductor.org/packages/pwalign/</a></div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Código desplazable","output":"Salida desplazable"};
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
