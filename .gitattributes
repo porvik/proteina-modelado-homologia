@@ -1,7 +1,7 @@
 * text=auto
 
-*.yml text eol=lf
 .gitattributes text eol=lf
+*.yml text eol=lf
 *.html text eol=lf
 *.qmd text eol=lf
 *.R text eol=lf
