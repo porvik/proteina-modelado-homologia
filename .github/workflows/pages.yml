@@ -1,0 +1,58 @@
+name: Publish Cuaderno to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare static site
+        run: |
+          mkdir -p _site
+          cp Cuaderno.html _site/index.html
+          cp Cuaderno.html _site/Cuaderno.html
+
+          if [ -d Cuaderno_files ]; then
+            cp -R Cuaderno_files _site/
+          fi
+
+          if [ -d images ]; then
+            cp -R images _site/
+          fi
+
+          if [ -f styles.css ]; then
+            cp styles.css _site/
+          fi
+
+          touch _site/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
